@@ -1,11 +1,83 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.wipro.cts.controller.Home"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" xmlns:viz="sap.viz.ui5.controls"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
-	<Page title="CTS" >
-		
+	<Page title="COVID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
 		<content>
-			<VBox>
-				<html:div id="map" style="height:calc( 100vh - 3rem );"></html:div>
-			</VBox>
+			<VBox></VBox>
+			<l:Grid hSpacing="0" vSpacing="0" defaultSpan="L4 M4 S12">
+				<l:content>
+					<ScrollContainer vertical="true" horizontal="false" class="customScroll">
+						<layoutData>
+							<l:GridData span="L9 M7 S12"/>
+						</layoutData>
+						<html:div id="map" style="height:calc( 100vh - 3rem );"></html:div>
+					</ScrollContainer>
+					<VBox>
+						<layoutData>
+							<l:GridData span="L3 M3 S8"/>
+						</layoutData>
+						<VBox>
+							<HBox >
+								<GenericTile id="thresholdAlerts" press="onAlertsPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+									<TileContent footer="Threshold Alerts">
+										<NumericContent value="{/thresholdAlerts}" valueColor="Critical"/>
+									</TileContent>
+								</GenericTile>
+								<GenericTile id="fallDetection" press="onFallDetect2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+									<TileContent footer="Fall Detection">
+										<NumericContent value="{/fallDetection}" valueColor="Error" press="onNotifications"/>
+									</TileContent>
+								</GenericTile>
+							</HBox>
+							<VBox id="thresholdAlertLayout" class="sapUiSmallMarginTop">
+								<viz:VizFrame id="idVizFrame" vizProperties="{ title: {text : 'Your Title', visible : false}}" uiConfig="{applicationSet:'fiori'}"
+									height='20rem' width="23rem" vizType='column'>
+									<viz:dataset>
+										<viz.data:FlattenedDataset data="{/GraphData}">
+											<viz.data:dimensions>
+												<viz.data:DimensionDefinition name="Date" value="{Posting_Date}"/>
+											</viz.data:dimensions>
+											<viz.data:measures>
+												<viz.data:MeasureDefinition name="Consumption" value="{Consumption}"/>
+												<viz.data:MeasureDefinition name="Bill_Amount" value="{Bill_Amount}"/>
+												<viz.data:MeasureDefinition name="Price" value="{Price}"/>
+											</viz.data:measures>
+										</viz.data:FlattenedDataset>
+									</viz:dataset>
+									<viz:feeds>
+										<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Consumption"/>
+										<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Bill_Amount"/>
+										<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Price"/>
+										<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Date"/>
+									</viz:feeds>
+								</viz:VizFrame>
+							</VBox>
+							<VBox id="fallDetectionLayout" visible="false" class="sapUiSmallMarginTop">
+								<HBox >
+									<GenericTile press="onAlertsPress" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+										<TileContent footer="Threshold Alerts">
+											<NumericContent value="{/thresholdAlerts}" valueColor="Critical"/>
+										</TileContent>
+									</GenericTile>
+									<GenericTile press="onFallDetect2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+										<TileContent footer="Fall Detection">
+											<NumericContent value="{/fallDetection}" valueColor="Error" press="onNotifications"/>
+										</TileContent>
+									</GenericTile>
+								</HBox>
+							</VBox>
+						</VBox>
+					</VBox>
+				</l:content>
+			</l:Grid>
 		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" text="{/buttonText}" press="onMarkerSimulate"/>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" visible="false" id="GoBack" text="Go back" press="onGoBack"/>
+			</Toolbar>
+		</footer>
 	</Page>
 </mvc:View>

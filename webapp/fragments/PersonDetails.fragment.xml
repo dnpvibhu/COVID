@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:viz="sap.viz.ui5.controls"
+	displayBlock="true" xmlns:c="sap.suite.ui.microchart" xmlns:suite="sap.suite.ui.commons" xmlns:core="sap.ui.core">
+	<Popover title="Driver: {/TruckData/FIRST_NAME} " xmlns:html="http://www.w3.org/1999/xhtml" placement="Auto" class="popupClass">
+		<customHeader>
+			<Bar >
+				<!--<contentLeft>-->
+				<!--	<Title class="sapUiSmallMarginBegin" text="Driver: {/TruckData/FIRST_NAME} {/TruckData/LAST_NAME}"></Title>-->
+				<!--</contentLeft>-->
+				<contentMiddle>
+					<Title text="{/thing/Pat_ID}"></Title>
+				</contentMiddle>
+				<!--<contentRight >-->
+				<!--	<Title class="sapUiSmallMarginEnd" text="SHPMT Qty: {/thing/LFIMG} M3"></Title>-->
+				<!--</contentRight>-->
+			</Bar>
+		</customHeader>
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm editable="false" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+					emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Name"/>
+						<Text text="{/thing/Name}"/>
+						<Label text="Age"/>
+						<Text text="{/thing/Age}"/>
+						<Label text="Emergency Contact Number"/>
+						<Text text="{/thing/Tel}"/>
+						<Label text="Email"/>
+						<Text text="{/thing/Email}"/>
+						<!--<Label text="Condition"/>-->
+						<!--<Text text="{/thing/personCondition}"/>-->
+					</f:content>
+				</f:SimpleForm>
+				<!--<HBox alignContent="Center" alignItems="Center" justifyContent="Center" fitContainer="true">-->
+				<!--	<Button press="onDeliveryClose" text="Shipment Complete" type="Accept"></Button>-->
+				<!--	<Button width="6rem" class="sapUiMediumMarginBegin" press="onSignOffClose" text="Close" type="Reject"></Button>-->
+				<!--</HBox>-->
+			</VBox>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

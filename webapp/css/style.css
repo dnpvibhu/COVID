@@ -1,1 +1,12 @@
 /* Enter your custom styles here */
+
+.legend {
+    position: absolute;
+    z-index: 1;
+    background: rgba(221, 230, 236, 0.85);
+    border-radius: 0 0 20px 0;
+}
+
+.sapUiXLMarginBegin {
+    margin-left: 10rem !important;
+}

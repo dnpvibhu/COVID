@@ -61,7 +61,8 @@
 			"": {
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
-				"preload": true
+				"preload": true,
+				"uri": "model/Details.json"
 			}
 		},
 		"resources": {

@@ -1,0 +1,107 @@
+{
+	"Person": [{
+		"Pat_ID":"10001101",
+		"Email": "arun46@outlook.com",
+		"Tel": "202-555-0107",
+		"Name": "Arun Ruddy",
+		"Age": "28",
+		"personImage": "./img/d1.jpeg",
+		"personCondition": "Stable"
+	}, {
+		"Pat_ID":"10001102",
+		"Email": "emmaw12@icloud.com",
+		"Tel": "202-555-0184",
+		"Name": "Emma Watson",
+		"Age": "43",
+		"personImage": "./img/emma.png",
+		"personCondition": "Stable"
+	}, {
+		"Pat_ID":"10001103",
+		"Email": "willy46@yahoo.com",
+		"Tel": "202-555-0159",
+		"Name": "William Black",
+		"Age":"57",
+		"personImage": "./img/black.jpeg",
+		"personCondition": "Critical"
+	}, {
+		"Pat_ID":"10001105",
+		"Email": "Charles13@sbcglobal.net",
+		"Tel": "202-555-0186",
+		"Name": "Charles Karen",
+		"Age":"32",
+		"personImage": "./img/las.jpg",
+		"personCondition": "Stable"
+	}, {
+		"Pat_ID":"10001105",
+		"Email": "jj8055528@msn.com",
+		"Tel": "202-555-0118",
+		"Name": "BASHA MM",
+		"Age":"38",
+		"personImage": "./img/cj.jpg",
+		"personCondition": "Stable"
+	}, {
+		"Pat_ID":"10001106",
+		"Email": "noah@msn.com",
+		"Tel": "202-555-0111",
+		"Name": "Noah Liam",
+		"Age":"56",
+		"personImage": "./img/cj.jpg",
+		"personCondition": "Stable"
+	}, {
+		"Pat_ID":"10001107",
+		"Email": "danny556@gmail.com",
+		"Tel": "515-555-0102",
+		"Name": "Daniel Thomas",
+		"Age":"72",
+		"personImage": "./img/cj.jpg",
+		"personCondition": "Stable"
+	}, {
+		"Email": "albedavidrt@gmail.com",
+		"Tel": "515-555-0197",
+		"Name": "David Ethan",
+		"personImage": "./img/cj.jpg",
+		"personCondition": "Stable"
+	}, {
+		"Name": "Albert Fernandez",
+		"personImage": "./img/d2.jpeg",
+		"personCondition": "Stable",
+		"Email": "albertfer@gmail.com",
+		"Tel": "515-555-0189"
+	}, {
+		"Email": "lennyliam@gmail.com",
+		"Tel": "515-555-0198",
+		"Name": "Lenny Liam",
+		"personImage": "./img/cj.jpg",
+		"personCondition": "Stable"
+	}],
+
+	"GraphData": [{
+		"Bill_Number": 1,
+		"Posting_Date": "10-04-2020",
+		"Bill_Amount": 2250,
+		"Consumption": 450,
+		"Price": 0.50,
+		"Payment_Date": 5
+	}, {
+		"Bill_Number": 2,
+		"Posting_Date": "10-03-2020",
+		"Bill_Amount": 2300,
+		"Consumption": 460,
+		"Price": 0.50,
+		"Payment_Date": 4
+	}, {
+		"Bill_Number": 3,
+		"Posting_Date": "10-02-2020",
+		"Bill_Amount": 2002.5,
+		"Consumption": 445,
+		"Price": 0.045,
+		"Payment_Date": 0
+	}, {
+		"Bill_Number": 4,
+		"Posting_Date": "11-01-2020",
+		"Bill_Amount": 2047.5,
+		"Consumption": 455,
+		"Price": 0.045,
+		"Payment_Date": 0
+	}]
+}
